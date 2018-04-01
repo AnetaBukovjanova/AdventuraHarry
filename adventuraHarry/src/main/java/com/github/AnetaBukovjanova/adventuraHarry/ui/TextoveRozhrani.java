@@ -1,4 +1,4 @@
-package com.github.AnetaBukovjanova.adventuraHarry.uiText;
+package com.github.AnetaBukovjanova.adventuraHarry.ui;
 
 
 import java.util.Scanner;
