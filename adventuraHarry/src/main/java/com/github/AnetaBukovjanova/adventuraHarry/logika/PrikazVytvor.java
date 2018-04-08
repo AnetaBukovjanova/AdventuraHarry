@@ -45,7 +45,7 @@ public class PrikazVytvor implements IPrikaz
                 batoh.smazVec("bylina2");
                 batoh.smazVec("bylina3");
                 batoh.smazVec("bylina4");    
-                Vec lektvar = new Vec("lektvar",true);
+                Vec lektvar = new Vec("lektvar",true, "lektvar.png");
                 batoh.pridejVec(lektvar);
                 return "Vytvořil jsi lektvar. Jdi zachránit Hermionu.";
             }

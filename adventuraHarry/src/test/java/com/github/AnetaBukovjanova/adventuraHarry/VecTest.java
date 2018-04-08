@@ -44,7 +44,7 @@ public class VecTest
     @Test
     public void test1()
     {
-        Vec vec1 = new Vec("koste", false);
+        Vec vec1 = new Vec("koste", false, "koste.jpg");
         assertEquals("koste", vec1.getNazev()); 
         assertEquals(false, vec1.jePrenositelna());
     }

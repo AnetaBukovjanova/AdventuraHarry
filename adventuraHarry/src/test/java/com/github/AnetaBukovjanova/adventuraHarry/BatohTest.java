@@ -49,11 +49,11 @@ public class BatohTest
     public void testBatoh()
     {
     	Batoh batoh1 = new Batoh();
-    	Vec vec1 = new Vec("věc1", true);
-        Vec vec2 = new Vec("věc2", true);
-        Vec vec3 = new Vec("věc3", true);
-        Vec vec4 = new Vec("věc4", true);
-        Vec vec5 = new Vec("věc5", true);
+    	Vec vec1 = new Vec("věc1", true, "vec.png");
+        Vec vec2 = new Vec("věc2", true, "vec2.png");
+        Vec vec3 = new Vec("věc3", true, "vec3.png");
+        Vec vec4 = new Vec("věc4", true, "vec4.png");
+        Vec vec5 = new Vec("věc5", true, "vec5.png");
         assertEquals(true, batoh1.pridejVec(vec1));
         assertEquals(true, batoh1.pridejVec(vec2));
         assertEquals(true, batoh1.pridejVec(vec3));

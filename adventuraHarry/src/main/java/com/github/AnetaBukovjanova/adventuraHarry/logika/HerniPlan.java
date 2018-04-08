@@ -1,6 +1,8 @@
 package com.github.AnetaBukovjanova.adventuraHarry.logika;
 import java.util.*;
 
+import java.util.Observable;
+
 /**
  *  Class HerniPlan - třída představující mapu a stav adventury.
  * 
@@ -13,7 +15,8 @@ import java.util.*;
  *@author    Aneta Bukovjanová
  *@version   pro zimní semestr 2017/2018
  */
-public class HerniPlan {
+public class HerniPlan extends Observable 
+{
 
     private Prostor aktualniProstor;
     private Prostor viteznyProstor;
@@ -59,20 +62,20 @@ public class HerniPlan {
         
         //vytváření věcí, které jsou přenositelné
     
-        Vec hulka = new Vec("hulka", true);
-        Vec bylina = new Vec ("bylina", true);
-        Vec bylina2 = new Vec ("bylina2", true);
-        Vec bylina3 = new Vec ("bylina3", true);
-        Vec bylina4 = new Vec ("bylina4", true);
-        Vec klic = new Vec("klic", true);
-        Vec mapa = new Vec("mapa", true);
-        Vec baterka = new Vec ("baterka", true);
+        Vec hulka = new Vec("hulka", true, "hulka.png");
+        Vec bylina = new Vec ("bylina", true, "bylina.png");
+        Vec bylina2 = new Vec ("bylina2", true, "bylina2.png");
+        Vec bylina3 = new Vec ("bylina3", true, "bylina3.png");
+        Vec bylina4 = new Vec ("bylina4", true, "bylina4.png");
+        Vec klic = new Vec("klic", true, "klic.ico");
+        Vec mapa = new Vec("mapa", true, "mapa.png");
+        Vec baterka = new Vec ("baterka", true, "baterka.png");
             
         //vytváření věcí, které nejsou přenositelné
         
-        Vec kamen_mudrcu = new Vec("kamen_mudrcu", false);
-        Vec koste = new Vec ("koste", false);
-        Vec neviditelny_habit = new Vec ("neviditelny_habit", false);
+        Vec kamen_mudrcu = new Vec("kamen_mudrcu", false, "kamen_mudrcu.png");
+        Vec koste = new Vec ("koste", false, "koste.png");
+        Vec neviditelny_habit = new Vec ("neviditelny_habit", false, "neviditelny_plast" );
         
         //vkládání věcí do místností
         
@@ -140,5 +143,10 @@ public class HerniPlan {
      */
     public boolean maLektvar(){
         return batoh.obsahujeVec("lektvar");
-    }    
+    }   
+    @Override
+    public void notifyObservers(){
+        setChanged();
+        super.notifyObservers();
+    }
 }

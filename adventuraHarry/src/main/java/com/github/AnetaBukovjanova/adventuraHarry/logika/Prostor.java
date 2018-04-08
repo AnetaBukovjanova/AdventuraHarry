@@ -22,6 +22,8 @@ public class Prostor {
     private Set<Vec> veci;  // Věci v prostoru
     private Set<Postava> postavy; // Postavy v prostoru
     private boolean jeZamceno=false; //Zamčeno
+    private double x;
+    private double y;
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
      * před domem"
@@ -37,6 +39,8 @@ public class Prostor {
         veci = new HashSet <Vec> ();
         postavy = new HashSet<Postava>();
         this.jeZamceno = jeZamceno;
+        this.x = x;
+        this.y = y;
     }
 
     /**
@@ -181,6 +185,21 @@ public class Prostor {
         veci.add (vec);
     }
 
+    public String seznamVeci() {
+        String seznam = "\n Veci v mistnosti: ";
+        if (veci.isEmpty())
+        {
+            seznam = seznam + " žádné věci zde nejsou.";
+        }
+        else
+        {
+            for (Vec u : veci) 
+            {
+                seznam += "\n < " + u.getNazev();
+            }
+        }
+        return seznam;
+    }
     /**
      * vypíše seznam věcí v daném prostoru
      * 
@@ -321,5 +340,22 @@ public class Prostor {
         }
         return null;
     }
+    
+    public double getX() {
+		return x;
+	}
+
+	public void setX(double x) {
+		this.x = x;
+	}
+
+	public double getY() {
+		return y;
+	}
+
+	public void setY(double y) {
+		this.y = y;
+	}
+    
 }
 

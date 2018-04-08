@@ -2,7 +2,7 @@
  * Kontrola kódování: Příliš žluťoučký kůň úpěl ďábelské ódy. */
 package com.github.AnetaBukovjanova.adventuraHarry.logika;
 
-import java.util.*;
+
 
 
 /*******************************************************************************
@@ -17,15 +17,17 @@ public class Vec
     //== Datové atributy (statické i instancí)======================================
     private String nazev;
     private boolean prenositelnost;
+    private String obrazek;
     //== Konstruktory a tovární metody =============================================
 
     /***************************************************************************
      *  Konstruktor, kde jako parametr je název věci a jestli je přenositelná.
      */
-    public Vec(String nazev, boolean prenositelnost)
+    public Vec(String nazev, boolean prenositelnost, String obrazek)
     {
         this.nazev = nazev;
         this.prenositelnost = prenositelnost;
+        this.obrazek = obrazek;
        
     }
 
@@ -44,7 +46,15 @@ public class Vec
         return prenositelnost;
     }
 
-}
+
 
 //== Soukromé metody (instancí i třídy) ========================================
 
+public String getObrazek() {
+    return obrazek;
+}
+
+public void setObrazek(String obrazek) {
+    this.obrazek = obrazek;
+}
+}
