@@ -1,5 +1,5 @@
 package com.github.AnetaBukovjanova.adventuraHarry.logika;
-import java.util.*;
+
 
 import java.util.Observable;
 
@@ -38,13 +38,13 @@ public class HerniPlan extends Observable
      */
     private void zalozProstoryHry() {
         // vytvářejí se jednotlivé prostory
-        Prostor chodba = new Prostor("chodba","Nacházíš se v chodbě, kde máš před sebou dvoje dveře. V jedné místnosti se nachází smrt a v druhé místnosti nalezneš věci, které potřebuješ k dokončení hry.",false);
-        Prostor mistnost1 = new Prostor("mistnost1", "Zde se nachází spousta věcí. Seber ty, které ti budou k užitku", false);
-        Prostor mistnost2 = new Prostor("mistnost2","Zde se nachází smrt. Voldemort tě právě zabil zaklínadlem Avada Kedavra.\n", false);
-        Prostor mistnost3 = new Prostor("mistnost3","Nacházíte se v místnosti,kde jsou důležité věci. Svažte jestli je potřebujete.", false); 
-        Prostor mistnost4 = new Prostor("mistnost4","Jste v místnosti Snapa. Je tu něco, co Vám pomůže vyhrát", true);
-        Prostor mistnost5 = new Prostor("mistnost5","Vlezli jste do místnosti s Lenkou. Pomůže Vám vytvořit lektvar na záchranu", false);
-        Prostor hermiona = new Prostor("Hermiona","Nalezli jste Hermionu. Pokud nemáte lektvar. Prohrál jste.", false);
+        Prostor chodba = new Prostor("chodba","Nacházíš se v chodbě, kde máš před sebou dvoje dveře. V jedné místnosti se nachází smrt a v druhé místnosti nalezneš věci, které potřebuješ k dokončení hry.",false,100,0);
+        Prostor mistnost1 = new Prostor("mistnost1", "Zde se nachází spousta věcí. Seber ty, které ti budou k užitku", false,170,-30);
+        Prostor mistnost2 = new Prostor("mistnost2","Zde se nachází smrt. Voldemort tě právě zabil zaklínadlem Avada Kedavra.\n", false,170,50);
+        Prostor mistnost3 = new Prostor("mistnost3","Nacházíte se v místnosti,kde jsou důležité věci. Svažte jestli je potřebujete.", false, 220, -20); 
+        Prostor mistnost4 = new Prostor("mistnost4","Jste v místnosti Snapa. Je tu něco, co Vám pomůže vyhrát", true,280,-30);
+        Prostor mistnost5 = new Prostor("mistnost5","Vlezli jste do místnosti s Lenkou. Pomůže Vám vytvořit lektvar na záchranu", false,340,-20);
+        Prostor hermiona = new Prostor("Hermiona","Nalezli jste Hermionu. Pokud nemáte lektvar. Prohrál jste.", false,400,-30);
 
         // přiřazují se průchody mezi prostory (sousedící prostory)
 

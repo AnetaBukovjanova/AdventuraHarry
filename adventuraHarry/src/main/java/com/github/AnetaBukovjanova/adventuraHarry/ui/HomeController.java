@@ -39,7 +39,7 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
 	@FXML private TextField textVstup;
 	@FXML private TextArea textVypis;
 	@FXML private Button odesli;
-	@FXML private ListView<Object> seznamVeciMistnost = new ListView();
+	@FXML private ListView<Object> seznamVeciMistnost = new ListView<>();
     @FXML private ListView<Object> seznamVeciBatoh = new ListView<>();
 	@FXML private ListView<Object> seznamVychodu = new ListView<>();
 	@FXML private ImageView panacek;
@@ -51,7 +51,7 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
 	
     /**
 	 * metoda čte příkaz ze vstupního textového pole
-	 * a zpracuje ho
+	 * a příkaz zpracuje
 	 */
     
 @FXML public void odesliPrikaz() {
@@ -62,13 +62,13 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
 		if(hra.konecHry()) {
 			textVypis.appendText("\n\n Konec hry \n");
 			textVstup.setDisable(true);
-			odesli.setDisable(true);
+			//odesli.setDisable(true);
 		}
 		hra.getHerniPlan().notifyObservers();
 }
 
 /**
- * Metoda bude soužit pro předání objektu se spuštěnou hrou
+ * Metoda bude fungovat jako předání objektu se spuštěnou hrou
  * kontroleru a zobrazí stav hry v grafice.
  * @param objekt spuštěné hry
  */
@@ -90,6 +90,10 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
 	
 }
 
+/**
+ * Metoda bude spouštět novou hru.
+ */
+
 @FXML public void novaHra() 
 {
 hra = new Hra();
@@ -99,12 +103,19 @@ hra.getHerniPlan().addObserver(this);
 hra.getHerniPlan().notifyObservers();
 }
 
+/**
+ * Metoda nastaví konec hry.
+ */
+
 @FXML public void konecHry() 
 {
     textVstup.setText("konec");
     odesliPrikaz();
 }
 
+/**
+ * Metoda zobrazí v html nápovědu.
+ */
 @FXML public void Napoveda() 
 {
    Stage stage = new Stage();
@@ -133,20 +144,20 @@ public void update(Observable arg0, Object arg1)
                 vychody.add(oddeleneVychody[i]);
             }
             
-            Map<String, Vec> sBatoh = hra.getHerniPlan().getBatoh().vratSeznamVeci();
-            for (String x : sBatoh.keySet()) 
-            {
-                Vec pomocna = sBatoh.get(x);
-                ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
-                obsahbatohu.add(obrazek);
-            }
+            //Map<String, Vec> sBatoh = hra.getHerniPlan().getBatoh().vratSeznamVeci();
+            //for (String x : sBatoh.keySet()) 
+            //{
+              //  Vec pomocna = sBatoh.get(x);
+              //  ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
+              //  obsahbatohu.add(obrazek);
+           // }
             
-            Map<String, Vec> sVeci = hra.getHerniPlan().getAktualniProstor().getSeznamVeci();
-            for (String x : sVeci.keySet()) 
-            {
-                Vec pomocna = sVeci.get(x);
-                ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
-               seznamveci.add(obrazek);
-            }
+           // Map<String, Vec> sVeci = hra.getHerniPlan().getAktualniProstor().getSeznamVeci();
+           // for (String x : sVeci.keySet()) 
+           // {
+               // Vec pomocna = sVeci.get(x);
+               // ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
+               //seznamveci.add(obrazek);
+           // }
 }
 }

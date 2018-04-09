@@ -48,11 +48,17 @@ public class Vec
 
 
 
-//== Soukromé metody (instancí i třídy) ========================================
-
+//== Soukromé metody (instancí i třídy) =======================================
+    
+    /**
+     * metoda vrací název obrázku
+     */
 public String getObrazek() {
     return obrazek;
 }
+/**
+ * Metoda nastaví obrázek
+ */
 
 public void setObrazek(String obrazek) {
     this.obrazek = obrazek;

@@ -1,5 +1,5 @@
 package com.github.AnetaBukovjanova.adventuraHarry.logika;
-import java.util.*;
+
 /**
  *  Třída PrikazJdi implementuje pro hru příkaz jdi.
  *  Tato třída je součástí jednoduché textové hry.

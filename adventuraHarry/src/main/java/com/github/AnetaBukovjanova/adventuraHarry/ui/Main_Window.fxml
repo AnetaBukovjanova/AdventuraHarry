@@ -7,7 +7,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="885.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.github.AnetaBukovjanova.adventuraHarry.ui.HomeController">
    <children>
       <TextField fx:id="textVstup" layoutX="174.0" layoutY="534.0" prefHeight="25.0" prefWidth="456.0" />
       <TextArea fx:id="textVypis" layoutX="272.0" layoutY="263.0" prefHeight="258.0" prefWidth="305.0" />
@@ -25,21 +25,21 @@
         <menus>
           <Menu mnemonicParsing="false" text="Hra">
             <items>
-              <MenuItem mnemonicParsing="false" text="Nová hra" />
-                  <MenuItem mnemonicParsing="false" text="Konec hry" />
+              <MenuItem mnemonicParsing="false" onAction="#novaHra" text="Nová hra" />
+                  <MenuItem mnemonicParsing="false" onAction="#konecHry" text="Konec hry" />
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Nápověda">
             <items>
-              <MenuItem mnemonicParsing="false" text="Nápověda" />
+              <MenuItem mnemonicParsing="false" onAction="#Napoveda" text="Nápověda" />
             </items>
           </Menu>
         </menus>
       </MenuBar>
       <Label layoutX="610.0" layoutY="268.0" text="Východy" />
-      <Button layoutX="646.0" layoutY="534.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="34.0" text="OK" />
+      <Button layoutX="646.0" layoutY="534.0" mnemonicParsing="false" onAction="#odesliPrikaz" prefHeight="25.0" prefWidth="34.0" text="OK" />
       <Label layoutX="368.0" layoutY="569.0" prefHeight="17.0" prefWidth="67.0" text="Zadej příkaz" />
-      <ImageView fx:id="panacek" fitHeight="68.0" fitWidth="54.0" layoutX="324.0" layoutY="67.0">
+      <ImageView fx:id="panacek" fitHeight="68.0" fitWidth="54.0" layoutX="314.0" layoutY="67.0">
          <image>
             <Image url="@harry255.png" />
          </image>

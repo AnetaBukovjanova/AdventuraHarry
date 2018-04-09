@@ -49,8 +49,5 @@ public class Postava
         return jmeno+" říká: "+proslov;
     }
     
-    //public String getSeznamPostav() {
-  //  	return seznamPostav;
-//}
 
 }

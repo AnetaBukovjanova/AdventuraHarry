@@ -3,6 +3,8 @@ package com.github.AnetaBukovjanova.adventuraHarry.logika;
 import java.util.*;
 import java.util.stream.Collectors;
 
+import com.github.AnetaBukovjanova.adventuraHarry.logika.Prostor;
+
 /**
  * Trida Prostor - popisuje jednotlivé prostory (místnosti) hry
  *
@@ -32,7 +34,7 @@ public class Prostor {
      * víceslovný název bez mezer.
      * @param popis Popis prostoru.
      */
-    public Prostor(String nazev, String popis, boolean jeZamceno) {
+    public Prostor(String nazev, String popis, boolean jeZamceno, double x, double y) {
         this.nazev = nazev;
         this.popis = popis;
         vychody = new HashSet<>();
@@ -185,6 +187,9 @@ public class Prostor {
         veci.add (vec);
     }
 
+    /**
+     * Metoda vrací seznam věcí
+     */
     public String seznamVeci() {
         String seznam = "\n Veci v mistnosti: ";
         if (veci.isEmpty())
@@ -341,21 +346,44 @@ public class Prostor {
         return null;
     }
     
+    /**
+     * Metoda vraci hodnotu X
+     */
     public double getX() {
 		return x;
 	}
-
+    /**
+     * Metoda nastaví hodnotu X
+     */
 	public void setX(double x) {
 		this.x = x;
 	}
-
+	/**
+     * Metoda vraci hodnotu Y
+     */
 	public double getY() {
 		return y;
 	}
-
+	
+	/**
+     * Metoda nastaví hodnotu Y
+     */
+	
 	public void setY(double y) {
 		this.y = y;
 	}
+	
+	/**
+     * Vrací seznam východů
+     */
+	   public String seznamVychodu() 
+	    {
+	        String vracenyText = "vychody:";
+	        for (Prostor sousedni : vychody) {
+	             vracenyText += " " + sousedni.getNazev();
+	        }
+	        return vracenyText;
+	    }
     
 }
 

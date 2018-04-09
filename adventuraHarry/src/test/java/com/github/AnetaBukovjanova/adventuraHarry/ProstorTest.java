@@ -41,13 +41,13 @@ public class ProstorTest
      */
     @Test
     public  void testLzeProjit() {		
-        Prostor prostor1 = new Prostor("chodba", "chodba s dvěma dveřmi",true);
-        Prostor prostor2 = new Prostor("mistnost1", "mistnost s věcmi", true);
-        Prostor prostor3 = new Prostor("mistnost2","smrt", true);
-        Prostor prostor4 = new Prostor("mistnost3","klic",true);
-        Prostor prostor5 = new Prostor("mistnost4","zamčeno", false);
-        Prostor prostor6 = new Prostor("mistnost5","suroviny", true);
-        Prostor prostor7 = new Prostor("Hermiona","konec", true);
+        Prostor prostor1 = new Prostor("chodba", "chodba s dvěma dveřmi",true, 240,0);
+        Prostor prostor2 = new Prostor("mistnost1", "mistnost s věcmi", true,150,0);
+        Prostor prostor3 = new Prostor("mistnost2","smrt", true,170,0);
+        Prostor prostor4 = new Prostor("mistnost3","klic",true,300,150);
+        Prostor prostor5 = new Prostor("mistnost4","zamčeno", false,0,200);
+        Prostor prostor6 = new Prostor("mistnost5","suroviny", true,220,50);
+        Prostor prostor7 = new Prostor("Hermiona","konec", true,60,300);
         prostor1.setVychod(prostor2);
         prostor1.setVychod(prostor3);
         prostor2.setVychod(prostor4);

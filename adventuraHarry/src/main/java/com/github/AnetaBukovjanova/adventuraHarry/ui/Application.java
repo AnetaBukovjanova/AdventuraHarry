@@ -9,6 +9,10 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Třída Application spouští adventuru i s grafickým rozhraním.
+ */
+
 public class Application extends javafx.application.Application {
 
 	public static void main(String[] args) {
@@ -24,6 +28,10 @@ public class Application extends javafx.application.Application {
             }
 }
 	}
+	
+	/**
+     * Metoda načítá fxml s grafickým rozhraním
+     */
 	
 	@Override
 	   public void start(Stage stage) throws Exception {
