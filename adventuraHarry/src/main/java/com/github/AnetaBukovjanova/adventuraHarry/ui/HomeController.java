@@ -10,8 +10,8 @@ import com.github.AnetaBukovjanova.adventuraHarry.logika.Vec;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.net.URL;
-import java.util.Map;
 import java.util.ResourceBundle;
+import java.util.Set;
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -144,20 +144,19 @@ public void update(Observable arg0, Object arg1)
                 vychody.add(oddeleneVychody[i]);
             }
             
-            //Map<String, Vec> sBatoh = hra.getHerniPlan().getBatoh().vratSeznamVeci();
-            //for (String x : sBatoh.keySet()) 
-            //{
-              //  Vec pomocna = sBatoh.get(x);
-              //  ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
-              //  obsahbatohu.add(obrazek);
-           // }
+            Set <Vec> sBatoh = hra.getHerniPlan().getBatoh().getSeznamVeci();
+            for (Vec pomocna : sBatoh) 
+            {
+                ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
+                obsahbatohu.add(obrazek);
+           }
             
-           // Map<String, Vec> sVeci = hra.getHerniPlan().getAktualniProstor().getSeznamVeci();
-           // for (String x : sVeci.keySet()) 
-           // {
-               // Vec pomocna = sVeci.get(x);
-               // ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
-               //seznamveci.add(obrazek);
-           // }
+            Set <Vec> sVeci = hra.getHerniPlan().getAktualniProstor().getSeznamVeci();
+            for (Vec pomocna : sVeci) 
+            {
+                
+               ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
+               seznamveci.add(obrazek);
+            }
 }
 }

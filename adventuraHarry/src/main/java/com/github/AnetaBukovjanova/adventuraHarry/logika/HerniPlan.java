@@ -144,6 +144,8 @@ public class HerniPlan extends Observable
     public boolean maLektvar(){
         return batoh.obsahujeVec("lektvar");
     }   
+    
+    
     @Override
     public void notifyObservers(){
         setChanged();
