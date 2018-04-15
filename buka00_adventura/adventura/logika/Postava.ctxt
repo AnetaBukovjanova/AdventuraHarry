@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=jmeno\ proslov
+comment0.target=Postava(java.lang.String,\ java.lang.String)
+comment0.text=\r\n\ \ Konstruktor\ t\u0159\u00EDdy\ Postava\ deklaruje\ jmeno\ a\ proslov.\r\n
+comment1.params=
+comment1.target=java.lang.String\ getJmeno()
+comment1.text=\r\n\ Metoda\ vrac\u00ED\ jm\u00E9no\ osoby\r\n\ \r\n\ @return\ String\ jm\u00E9no\ osoby\r\n\ \r\n
+comment2.params=
+comment2.target=java.lang.String\ getProslov()
+comment2.text=\r\n\ Metoda\ vrac\u00ED\ proslov\ osoby\r\n\ \r\n\ @return\ String\ proslov\ osoby\r\n\ \r\n
+comment3.params=
+comment3.target=java.lang.String\ rekniProslov()
+comment3.text=\r\n\ Metoda\ vrac\u00ED\ \u0159e\u010D\ osoby\ po\ p\u0159\u00EDkazu\ mluv\r\n
+numComments=4

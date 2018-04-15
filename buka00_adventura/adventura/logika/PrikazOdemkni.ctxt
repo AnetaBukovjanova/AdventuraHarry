@@ -1,0 +1,11 @@
+#BlueJ class context
+comment0.params=plan\ batoh
+comment0.target=PrikazOdemkni(HerniPlan,\ Batoh)
+comment0.text=\r\n\ \ Konstruktor\ t\u0159\u00EDdy\r\n\ \ parametr\ batoh\ -\ batoh,\ kter\u00FD\ hr\u00E1\u010D\ pou\u017E\u00EDv\u00E1\r\n\ \ plan\ -\ hern\u00ED\ pl\u00E1n,\ ve\ kter\u00E9m\ se\ hr\u00E1\u010D\ pohybuje\r\n
+comment1.params=parametry
+comment1.target=java.lang.String\ provedPrikaz(java.lang.String[])
+comment1.text=\r\n\ T\u00EDmto\ p\u0159\u00EDkazem\ odemknu\ m\u00EDstnosti.\ M\u00EDstnost\ mus\u00ED\ b\u00FDt\ zam\u010Den\u00E1\ a\ mus\u00ED\ \r\n\ m\u00EDt\ v\u00FDchody\r\n\r\n\ @param\ \ \ parametry\ \ \ jako\ \ parametr\ obsahuje\ jmeno\ mistnosti,\r\n\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ ktera\ ma\ byt\ odemcena\r\n
+comment2.params=
+comment2.target=java.lang.String\ getNazev()
+comment2.text=\r\n\ Metoda\ vraci\ nazev\ prikazu\ (slovo\ ktere\ pouziva\ hrac\ pro\ jeho\ vyvolani)\r\n\ \r\n\ @return\ nazev\ prikazu\r\n
+numComments=3
