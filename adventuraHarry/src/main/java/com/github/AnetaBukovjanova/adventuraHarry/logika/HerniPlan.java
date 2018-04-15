@@ -10,7 +10,7 @@ import java.util.Observable;
  *  vytváří všechny prostory,
  *  propojuje je vzájemně pomocí východů 
  *  a pamatuje si aktuální prostor, ve kterém se hráč právě nachází.
- *  Dále vytváří věci a postavy.
+ * Dále vytváří věci a postavy.
  *
  *@author    Aneta Bukovjanová
  *@version   pro zimní semestr 2017/2018
