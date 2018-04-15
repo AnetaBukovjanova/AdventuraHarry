@@ -22,7 +22,7 @@ public class Batoh
 	
 
     /**
-     * konstruktor třídy vytváří batoh
+     * Konstruktor třídy vytváří batoh.
      */
    public Batoh()
     {
@@ -30,11 +30,13 @@ public class Batoh
     }
     
     /**
-     * přidá věc do batohu pokud je v batohu místo a je věc přenositelná
+     * Přidá věc do batohu pokud je v batohu místo a je věc přenositelná
      * 
      * param vec věc, která se má přidat do batohu.
      * 
      * return true, pokud se věc podaří přidat do batohu.
+     * 
+     * return false pokud není místo či není přenositelná
      */
     public boolean pridejVec(Vec vec) {
         if(jeMistoVBatohu() && (vec.jePrenositelna()))
@@ -92,6 +94,10 @@ public class Batoh
         }
         return seznam;
     }
+    
+    /**
+     *  Metoda vrací seznam věcí.
+     */ 
     
     public Set<Vec> getSeznamVeci() {
     	return this.veci;

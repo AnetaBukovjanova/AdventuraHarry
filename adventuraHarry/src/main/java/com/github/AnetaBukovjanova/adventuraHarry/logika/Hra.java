@@ -110,9 +110,17 @@ public class Hra implements IHra {
         return herniPlan;
     }
     
+    /**
+     * Metoda vrací odkaz na batoh
+     */ 
+    
     public Batoh getBatoh() {
     	return batoh;
     }
+    
+    /**
+     *  Metoda vrací odkaz na platné příkazy.
+     */ 
     
     public SeznamPrikazu getPlatnePrikazy() {
     	return platnePrikazy;

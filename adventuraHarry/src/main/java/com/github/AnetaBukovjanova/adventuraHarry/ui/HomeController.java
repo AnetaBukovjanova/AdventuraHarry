@@ -1,12 +1,12 @@
 package com.github.AnetaBukovjanova.adventuraHarry.ui;
 
 import com.github.AnetaBukovjanova.adventuraHarry.logika.Hra;
-import java.util.Observable;
-import java.util.Observer;
-
 import com.github.AnetaBukovjanova.adventuraHarry.logika.IHra;
 import com.github.AnetaBukovjanova.adventuraHarry.logika.IPrikaz;
 import com.github.AnetaBukovjanova.adventuraHarry.logika.Vec;
+import java.util.Observable;
+import java.util.Observer;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.net.URL;
@@ -55,7 +55,7 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
     private ObservableList<String> seznamPrikazu = FXCollections.observableArrayList();
 	
     /**
-	 * metoda čte příkaz ze vstupního textového pole
+	 * metoda čte příkaz ze vstupního textového pole nebo z comboboxu
 	 * a příkaz zpracuje
 	 */
     
@@ -150,6 +150,10 @@ hra.getHerniPlan().notifyObservers();
    stage.show();
 }
 
+/**
+ * Metoda nastavuje panáčka, zobrazuje východy, zobrazuje seznam věcí v místnosti pomocí obrázků a obsah batohu pomocí obrázků
+ */
+
 @Override
 public void update(Observable arg0, Object arg1) 
     {
@@ -181,6 +185,9 @@ public void update(Observable arg0, Object arg1)
                seznamveci.add(obrazek);
             }
 }
+/**
+ * 
+ */
 
 @FXML public void Mistnost() 
 {

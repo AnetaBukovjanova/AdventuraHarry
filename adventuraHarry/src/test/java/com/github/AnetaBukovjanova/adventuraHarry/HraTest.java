@@ -66,6 +66,10 @@ public class HraTest {
         assertEquals(true, hra1.konecHry());
     }
 
+    /***************************************************************************
+     * Testuje průběh hry až k úplné výhře.
+     * 
+     */
     @Test
     public void testVyhra() {
         assertEquals("chodba", hra1.getHerniPlan().getAktualniProstor().getNazev());

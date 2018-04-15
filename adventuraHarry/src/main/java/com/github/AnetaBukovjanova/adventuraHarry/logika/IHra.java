@@ -55,9 +55,18 @@ public interface IHra
      *  @return     odkaz na herní plán
      */
      public HerniPlan getHerniPlan();
+    
+     /**
+     *  Metoda vrátí odkaz na platné příkazy v adventuře.
+     *  
+     *  @return     odkaz na SeznamPrikazu
+     */
      
      public SeznamPrikazu getPlatnePrikazy();
      
+     /**
+     *  Metoda vrátí odkaz na batoh.
+     */
      
      public Batoh getBatoh();
 

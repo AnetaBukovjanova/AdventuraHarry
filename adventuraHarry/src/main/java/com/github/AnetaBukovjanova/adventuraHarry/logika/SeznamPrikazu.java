@@ -22,19 +22,20 @@ public class SeznamPrikazu {
    
     
     /**
-     * Konstruktor
+     * Konstruktor vytváří novou mapu s příkazy
      */
     public SeznamPrikazu() {
         mapaSPrikazy = new HashMap<>(); //vytvořená nová mapa, do které se vkládají příkazy
     }
     
-
-
+    /**
+     * Vrací odkazy na mapu s příkazy
+     */
+    
     public Map<String, IPrikaz> getMapaSPrikazy() {
         return mapaSPrikazy;
     }
     
-
     
     /**
      * Vkládá nový příkaz.

@@ -386,6 +386,9 @@ public class Prostor {
 	        return vracenyText;
 	    }
 	  
+	  /**
+	     * Vrací seznam věcí
+	     */
       public Set<Vec> getSeznamVeci() {
 	    	return this.veci;
 	    }

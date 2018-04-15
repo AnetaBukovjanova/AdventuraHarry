@@ -138,6 +138,9 @@ public class HerniPlan extends Observable
         return hra.getBatoh().obsahujeVec("lektvar");
     }   
     
+    /**
+	 * Metoda zobrazí okno s GUI.
+     */ 
     
     @Override
     public void notifyObservers(){
