@@ -26,7 +26,7 @@ public class Prostor {
     private boolean jeZamceno=false; //Zamčeno
     private double x;
     private double y;
-	private Set<Vec> seznamVeci;
+	
     /**
      * Vytvoření prostoru se zadaným popisem, např. "kuchyň", "hala", "trávník
      * před domem"
@@ -385,9 +385,11 @@ public class Prostor {
 	        }
 	        return vracenyText;
 	    }
-	    public Set<Vec> getSeznamVeci() {
-	    	return seznamVeci;
+	  
+      public Set<Vec> getSeznamVeci() {
+	    	return this.veci;
 	    }
+
 	   
 }
 

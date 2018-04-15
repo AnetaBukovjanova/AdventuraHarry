@@ -5,13 +5,15 @@ import java.util.Observable;
 import java.util.Observer;
 
 import com.github.AnetaBukovjanova.adventuraHarry.logika.IHra;
-import com.github.AnetaBukovjanova.adventuraHarry.logika.Prostor;
+import com.github.AnetaBukovjanova.adventuraHarry.logika.IPrikaz;
 import com.github.AnetaBukovjanova.adventuraHarry.logika.Vec;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.Set;
+import java.util.Map;
+
 
 import javafx.fxml.FXML;
 import javafx.scene.Scene;
@@ -22,6 +24,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.image.ImageView;
 import javafx.scene.image.Image;
+import javafx.scene.control.ComboBox;
 import javafx.fxml.Initializable;
 import javafx.scene.web.WebView;
 import javafx.stage.Stage;
@@ -43,11 +46,13 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
     @FXML private ListView<Object> seznamVeciBatoh = new ListView<>();
 	@FXML private ListView<Object> seznamVychodu = new ListView<>();
 	@FXML private ImageView panacek;
+	@FXML private ComboBox comboPrikaz;
 	private IHra hra;
 	
 	private ObservableList<Object> vychody = FXCollections.observableArrayList();
 	private ObservableList<Object> seznamveci = FXCollections.observableArrayList();
     private ObservableList<Object> obsahbatohu = FXCollections.observableArrayList();
+    private ObservableList<String> seznamPrikazu = FXCollections.observableArrayList();
 	
     /**
 	 * metoda čte příkaz ze vstupního textového pole
@@ -55,17 +60,30 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
 	 */
     
 @FXML public void odesliPrikaz() {
-	String vypis = hra.zpracujPrikaz(textVstup.getText());
-	textVypis.appendText("\n--------\n"+textVstup.getText()+"\n--------\n");
-	textVypis.appendText(vypis);
-	textVstup.setText("");
-		if(hra.konecHry()) {
-			textVypis.appendText("\n\n Konec hry \n");
-			textVstup.setDisable(true);
-			//odesli.setDisable(true);
-		}
-		hra.getHerniPlan().notifyObservers();
+	String vypis = "";
+    String pomocny = "" + comboPrikaz.getSelectionModel().getSelectedItem();
+    if(pomocny.equals("null"))
+    {
+        vypis = hra.zpracujPrikaz(textVstup.getText());
+        textVypis.appendText("\n--------\n"+textVstup.getText()+"\n--------\n");
+    }
+    else
+    {
+        vypis = hra.zpracujPrikaz(pomocny + " " + textVstup.getText());
+        textVypis.appendText("\n--------\n"+ pomocny + " " + textVstup.getText()+"\n--------\n");
+    }
+textVypis.appendText(vypis);
+textVstup.setText("");
+    
+	if(hra.konecHry()) 
+            {
+		textVypis.appendText("\n\n Konec hry \n");
+		textVstup.setDisable(true);
+	}
+	hra.getHerniPlan().notifyObservers();
+    comboPrikaz.setValue(null);
 }
+
 
 /**
  * Metoda bude fungovat jako předání objektu se spuštěnou hrou
@@ -79,15 +97,20 @@ public class HomeController extends AnchorPane implements Observer, Initializabl
 	textVypis.setText(hra.vratUvitani());
 	textVypis.setEditable(false);
             
-            
-            seznamVeciMistnost.setItems(seznamveci);
-            seznamVeciBatoh.setItems(obsahbatohu);
-            seznamVychodu.setItems(vychody);
-            
-	hra.getHerniPlan().addObserver(this);
-            hra.getHerniPlan().notifyObservers();
-
-	
+    Map<String, IPrikaz> sPrikazu = hra.getPlatnePrikazy().getMapaSPrikazy();
+    
+    for(String prikaz : sPrikazu.keySet())
+    {
+        seznamPrikazu.add(prikaz);
+    }
+    
+    seznamVeciMistnost.setItems(seznamveci);
+    seznamVeciBatoh.setItems(obsahbatohu);
+    seznamVychodu.setItems(vychody);
+    comboPrikaz.setItems(seznamPrikazu);
+    
+hra.getHerniPlan().addObserver(this);
+    hra.getHerniPlan().notifyObservers();
 }
 
 /**
@@ -123,7 +146,6 @@ hra.getHerniPlan().notifyObservers();
    
    WebView webView = new WebView();               
    webView.getEngine().load(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResource("/zdrojeproadventuru/napoveda.html").toExternalForm());
-   
    stage.setScene(new Scene(webView, 1200, 650));
    stage.show();
 }
@@ -144,7 +166,7 @@ public void update(Observable arg0, Object arg1)
                 vychody.add(oddeleneVychody[i]);
             }
             
-            Set <Vec> sBatoh = hra.getHerniPlan().getBatoh().getSeznamVeci();
+            Set <Vec> sBatoh = hra.getBatoh().getSeznamVeci();
             for (Vec pomocna : sBatoh) 
             {
                 ImageView obrazek = new ImageView(new Image(com.github.AnetaBukovjanova.adventuraHarry.ui.Application.class.getResourceAsStream("/zdrojeproadventuru/"+pomocna.getObrazek()), 100, 100, false, false));
@@ -159,4 +181,15 @@ public void update(Observable arg0, Object arg1)
                seznamveci.add(obrazek);
             }
 }
+
+@FXML public void Mistnost() 
+{
+    String nazev = seznamVychodu.getSelectionModel().getSelectedItem().toString();
+    if(!hra.konecHry())
+    {
+    textVstup.setText("jdi " + nazev);
+    odesliPrikaz();
+    }
+}
+
 }

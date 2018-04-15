@@ -19,7 +19,7 @@ public class Batoh
 {
     public static final int KAPACITA_BATOHU = 4;// Kapacita batohu je 4 
     private Set <Vec> veci;
-	private Set<Vec> seznamVeci; 
+	
 
     /**
      * konstruktor třídy vytváří batoh
@@ -94,7 +94,7 @@ public class Batoh
     }
     
     public Set<Vec> getSeznamVeci() {
-    	return seznamVeci;
+    	return this.veci;
     }
             
     /**

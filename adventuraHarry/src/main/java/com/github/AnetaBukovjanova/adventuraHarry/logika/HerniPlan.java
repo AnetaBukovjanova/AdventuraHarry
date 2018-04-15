@@ -20,16 +20,16 @@ public class HerniPlan extends Observable
 
     private Prostor aktualniProstor;
     private Prostor viteznyProstor;
-    private Batoh batoh;
+    private Hra hra;
    
 
     /**
      *  Konstruktor který vytváří jednotlivé prostory a propojuje je pomocí východů.
      *  Jako výchozí aktuální prostor nastaví chodbu.
      */
-    public HerniPlan() {
+    public HerniPlan(Hra hra) {
         zalozProstoryHry();
-        batoh = new Batoh();
+        this.hra = hra;
     }
     /**
      *  Vytváří jednotlivé prostory a propojuje je pomocí východů.
@@ -54,6 +54,7 @@ public class HerniPlan extends Observable
         mistnost1.setVychod(mistnost3);
         mistnost3.setVychod(mistnost4);
         mistnost4.setVychod(mistnost5);
+        mistnost5.setVychod(mistnost4);
         mistnost5.setVychod(hermiona);
         
         //vkládání postav do místnosti
@@ -67,7 +68,7 @@ public class HerniPlan extends Observable
         Vec bylina2 = new Vec ("bylina2", true, "bylina2.png");
         Vec bylina3 = new Vec ("bylina3", true, "bylina3.png");
         Vec bylina4 = new Vec ("bylina4", true, "bylina4.png");
-        Vec klic = new Vec("klic", true, "klic.ico");
+        Vec klic = new Vec("klic", true, "klic.png");
         Vec mapa = new Vec("mapa", true, "mapa.png");
         Vec baterka = new Vec ("baterka", true, "baterka.png");
             
@@ -75,7 +76,7 @@ public class HerniPlan extends Observable
         
         Vec kamen_mudrcu = new Vec("kamen_mudrcu", false, "kamen_mudrcu.png");
         Vec koste = new Vec ("koste", false, "koste.png");
-        Vec neviditelny_habit = new Vec ("neviditelny_habit", false, "neviditelny_plast" );
+        Vec neviditelny_habit = new Vec ("neviditelny_habit", false, "neviditelny_plast.png" );
         
         //vkládání věcí do místností
         
@@ -129,20 +130,12 @@ public class HerniPlan extends Observable
     }
 
     /**
-     * Metoda vraci odkaz na aktualni batoh.
-     *
-     * @return batoh
-     */
-    public Batoh getBatoh(){
-        return batoh;
-    }
-
-    /**
      * Metoda, ktera zjistuje, zda ma hrac v batohu lektvar
      * 
      */
+
     public boolean maLektvar(){
-        return batoh.obsahujeVec("lektvar");
+        return hra.getBatoh().obsahujeVec("lektvar");
     }   
     
     
